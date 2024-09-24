@@ -75,5 +75,79 @@
 
     <script src="script.js"></script> <!-- Asegúrate de que la ruta sea correcta -->
 
+    ----------
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+
+    <script type="text/javascript" defer>
+        (function() {
+            var co = document.createElement("script");
+            co.type = "text/javascript";
+            co.async = true;
+            co.src = "https://xola.com/checkout.js";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(co, s);
+        })();
+    </script>
+
+    <style>
+        * {
+            -ms-scroll-chaining: none;
+            -ms-content-zooming: none;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .canvas-outer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .canvas-outer.beneath {
+            z-index: -1;
+        }
+
+        .canvas-outer canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        splash-bg {
+            display: block;
+        }
+
+        splash-bg,
+        splash-bg canvas {
+            height: 100%;
+            position: absolute;
+            bottom: auto;
+            left: 0;
+            right: auto;
+            top: 0;
+            width: 100%;
+        }
+    </style>
+
+    <div class="custom-scroll contacts-page v-scroll" id="custom-scroll"></div>
+    <div class="canvas-outer beneath" data-splash-bg-outer="">
+        <splash-bg class="splash-bg" style="opacity: 1;">
+            <canvas width="1381" height="858"></canvas>
+        </splash-bg>
+    </div>
+    <div class="canvas-outer" id="three-js">
+        <canvas width="1381" height="858" style="width: 1381px; height: 858px;"></canvas>
+    </div>
+
+    <script src="https://corewynwood.com/wp-content/themes/corewynwood_template/jsWW1.js" defer></script>
+
+    ------------
+
 </body>
 </html>
