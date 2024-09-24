@@ -1,65 +1,148 @@
-<main>
-  <ul class='slider'>
-    <li class='item' style="background-image: url('https://cdn.mos.cms.futurecdn.net/dP3N4qnEZ4tCTCLq59iysd.jpg')">
-      <div class='content'>
-        <h2 class='title'>"Lossless Youths"</h2>
-        <p class='description'> Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
-        praesentium nisi. Id laboriosam ipsam enim.  </p>
-        <button>Read More</button>
-      </div>
-    </li>
-    <li class='item' style="background-image: url('https://i.redd.it/tc0aqpv92pn21.jpg')">
-      <div class='content'>
-        <h2 class='title'>"Estrange Bond"</h2>
-        <p class='description'> Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
-        praesentium nisi. Id laboriosam ipsam enim.  </p>
-        <button>Read More</button>
-      </div>
-    </li>
-    <li class='item' style="background-image: url('https://wharferj.files.wordpress.com/2015/11/bio_north.jpg')">
-      <div class='content'>
-        <h2 class='title'>"The Gate Keeper"</h2>
-        <p class='description'> Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
-        praesentium nisi. Id laboriosam ipsam enim.  </p>
-        <button>Read More</button>
-      </div>
-    </li>
-    <li class='item' style="background-image: url('https://images7.alphacoders.com/878/878663.jpg')">
-      <div class='content'>
-        <h2 class='title'>"Last Trace Of Us"</h2>
-        <p class='description'>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.
-        </p>
-        <button>Read More</button>
-      </div>
-    </li>
-    <li class='item' style="background-image: url('https://theawesomer.com/photos/2017/07/simon_stalenhag_the_electric_state_6.jpg')">
-      <div class='content'>
-        <h2 class='title'>"Urban Decay"</h2>
-        <p class='description'>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.
-        </p>
-        <button>Read More</button>
-      </div>
-    </li>
-    <li class='item' style="background-image: url('https://da.se/app/uploads/2015/09/simon-december1994.jpg')">
-      <div class='content'>
-        <h2 class='title'>"The Migration"</h2>
-        <p class='description'> Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
-        praesentium nisi. Id laboriosam ipsam enim.  </p>
-        <button>Read More</button>
-      </div>
-    </li>
-  </ul>
-  <nav class='nav'>
-    <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
-    <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
-  </nav>
-</main>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider de Imágenes</title>
+    <link rel="stylesheet" href="style.css"> <!-- Enlaza con tu archivo CSS -->
+    <style>
+        /* Estilos básicos para el slider */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        main {
+            position: relative;
+            overflow: hidden;
+        }
+        .slider {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+        .item {
+            min-width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .content {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+        }
+        .nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .btn {
+            cursor: pointer;
+            font-size: 2em;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <ul class='slider'>
+            <li class='item' style="background-image: url('https://cdn.mos.cms.futurecdn.net/dP3N4qnEZ4tCTCLq59iysd.jpg')">
+                <div class='content'>
+                    <h2 class='title'>"Lossless Youths"</h2>
+                    <p class='description'> Lorem ipsum, dolor sit amet consectetur
+                    adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
+                    praesentium nisi. Id laboriosam ipsam enim.  </p>
+                    <button>Read More</button>
+                </div>
+            </li>
+            <li class='item' style="background-image: url('https://i.redd.it/tc0aqpv92pn21.jpg')">
+                <div class='content'>
+                    <h2 class='title'>"Estrange Bond"</h2>
+                    <p class='description'> Lorem ipsum, dolor sit amet consectetur
+                    adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
+                    praesentium nisi. Id laboriosam ipsam enim.  </p>
+                    <button>Read More</button>
+                </div>
+            </li>
+            <li class='item' style="background-image: url('https://wharferj.files.wordpress.com/2015/11/bio_north.jpg')">
+                <div class='content'>
+                    <h2 class='title'>"The Gate Keeper"</h2>
+                    <p class='description'> Lorem ipsum, dolor sit amet consectetur
+                    adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
+                    praesentium nisi. Id laboriosam ipsam enim.  </p>
+                    <button>Read More</button>
+                </div>
+            </li>
+            <li class='item' style="background-image: url('https://images7.alphacoders.com/878/878663.jpg')">
+                <div class='content'>
+                    <h2 class='title'>"Last Trace Of Us"</h2>
+                    <p class='description'> Lorem ipsum, dolor sit amet consectetur
+                    adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
+                    praesentium nisi. Id laboriosam ipsam enim.  </p>
+                    <button>Read More</button>
+                </div>
+            </li>
+            <li class='item' style="background-image: url('https://theawesomer.com/photos/2017/07/simon_stalenhag_the_electric_state_6.jpg')">
+                <div class='content'>
+                    <h2 class='title'>"Urban Decay"</h2>
+                    <p class='description'> Lorem ipsum, dolor sit amet consectetur
+                    adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
+                    praesentium nisi. Id laboriosam ipsam enim.  </p>
+                    <button>Read More</button>
+                </div>
+            </li>
+            <li class='item' style="background-image: url('https://da.se/app/uploads/2015/09/simon-december1994.jpg')">
+                <div class='content'>
+                    <h2 class='title'>"The Migration"</h2>
+                    <p class='description'> Lorem ipsum, dolor sit amet consectetur
+                    adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
+                    praesentium nisi. Id laboriosam ipsam enim.  </p>
+                    <button>Read More</button>
+                </div>
+            </li>
+        </ul>
+        <nav class='nav'>
+            <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
+            <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
+        </nav>
+    </main>
 
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        // Lógica para el slider (puedes expandirlo según sea necesario)
+        const items = document.querySelectorAll('.item');
+        const prevBtn = document.querySelector('.btn.prev');
+        const nextBtn = document.querySelector('.btn.next');
+        let currentIndex = 0;
+
+        function updateSlider() {
+            items.forEach((item, index) => {
+                item.style.display = (index === currentIndex) ? 'flex' : 'none';
+            });
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : items.length - 1;
+            updateSlider();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex < items.length - 1) ? currentIndex + 1 : 0;
+            updateSlider();
+        });
+
+        updateSlider(); // Inicia el slider mostrando el primer item
+    </script>
+</body>
+</html>
