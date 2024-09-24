@@ -1,14 +1,9 @@
-const button = document.getElementById('colorButton');
+const slider = document.querySelector('.slider');
 
-button.addEventListener('click', () => {
-    document.body.style.backgroundColor = getRandomColor();
-});
-
-function getRandomColor() {
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
+function activate(e) {
+  const items = document.querySelectorAll('.item');
+  e.target.matches('.next') && slider.append(items[0])
+  e.target.matches('.prev') && slider.prepend(items[items.length-1]);
 }
+
+document.addEventListener('click',activate,false);
