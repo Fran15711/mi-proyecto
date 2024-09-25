@@ -163,4 +163,19 @@ main {
   .item:nth-child(5) { left: calc(50% + 280px); }
   .item:nth-child(6) { left: calc(50% + 420px); opacity: 0; }
 }
+.about {
+    padding: 20px;
+    background-color: #f0f0f0; /* Cambia el color de fondo según tu diseño */
+    text-align: center;
+}
 
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.about p {
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
