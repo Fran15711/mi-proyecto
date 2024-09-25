@@ -4,12 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css"> <!-- Tu archivo CSS -->
-    <title>Portafolio Francisco Noriega</title>
+    <title>Portafolio</title>
 </head>
 <body>
 
-    <!-- Sección del Slider -->
-    <main>
+    <!-- Seccion 2 -->
+    <section class="seccion2">
+        <h2>Acerca de Nosotros</h2>
+        <p>Esta es la sección donde puedes hablar sobre tu empresa o proyecto.</p>
+    </section>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  
+     <!-- Sección del Slider -->
+    <section class="seccion1">
         <ul class='slider'>
             <li class='item' style="background-image: url('https://cdn.mos.cms.futurecdn.net/dP3N4qnEZ4tCTCLq59iysd.jpg')">
                 <div class='content'>
@@ -70,31 +79,94 @@
             <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
             <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
         </nav>
-    </main>
+    </section>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <script src="script.js"></script> <!-- Asegúrate de que la ruta sea correcta -->
 
-    </main>
 
-    <!-- Nueva sección -->
-    <section class="about">
-        <h2>Acerca de Nosotros</h2>
-        <p>Esta es la sección donde puedes hablar sobre tu empresa o proyecto.</p>
+    <!-- Tercera Sección -->
+<section class="seccion3">
+    <div class="card">
+        <svg 
+            viewBox="0 0 100% 100%"
+            xmlns='http://www.w3.org/2000/svg'
+            class="noise"
+        >
+            <filter id='noiseFilter'>
+                <feTurbulence 
+                    type='fractalNoise' 
+                    baseFrequency='0.85' 
+                    numOctaves='6' 
+                    stitchTiles='stitch' />
+            </filter>
+
+            <rect
+                width='100%'
+                height='100%'
+                preserveAspectRatio="xMidYMid meet"
+                filter='url(#noiseFilter)' />
+        </svg>
+        <div class="content">
+            <h1>Interactive Gradient</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum tempore unde ex pariatur distinctio laboriosam, dolorem quibusdam aperiam expedita consequuntur dolorum porro vitae earum quos voluptates et maxime. Tempora, mollitia.</p>
+        </div>
+    </div>
+    <div class="gradient-bg">
+        <svg 
+            viewBox="0 0 100vw 100vw"
+            xmlns='http://www.w3.org/2000/svg'
+            class="noiseBg"
+        >
+            <filter id='noiseFilterBg'>
+                <feTurbulence 
+                    type='fractalNoise'
+                    baseFrequency='0.6'
+                    stitchTiles='stitch' />
+            </filter>
+
+            <rect
+                width='100%'
+                height='100%'
+                preserveAspectRatio="xMidYMid meet"
+                filter='url(#noiseFilterBg)' />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="svgBlur">
+            <defs>
+                <filter id="goo">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+                    <feBlend in="SourceGraphic" in2="goo" />
+                </filter>
+            </defs>
+        </svg>
+        <div class="gradients-container">
+            <div class="g1"></div>
+            <div class="g2"></div>
+            <div class="g3"></div>
+            <div class="g4"></div>
+            <div class="g5"></div>
+            <div class="interactive"></div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Cuarta sección -->
+    <section class="seccion4">
+        <h2>Contacto</h2>
+        <p>Formulario o detalles de contacto.</p>
     </section>
 
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
-<!-- Tercera Sección -->
-<!-- Cuarta sección -->
-  
-  
-<!-- JS antes de body -->
+    <!-- JS antes de body -->
     <script src="script.js"></script> <!-- Tu archivo JS -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+   <!-- Script para el efecto interactivo -->
+<script src="script.js"></script> <!-- Asegúrate de que la ruta sea correcta -->
+
+  <!-- Script para el cursor animado -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
 
     <script type="text/javascript" defer>
         (function() {
