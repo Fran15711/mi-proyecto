@@ -555,12 +555,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
+      // Verifica si la sección está interseccionando con el viewport
       if (entry.isIntersecting) {
         section.classList.add('active'); // Agrega la clase 'active' a toda la sección
         observer.unobserve(entry.target); // Deja de observar una vez que la clase se activa
       }
     });
-  }, { threshold: 0.1 });
+  }, {
+    threshold: 0.9  // Cambiado a 0.9 para requerir que el 90% de la sección esté visible
+  });
 
   observer.observe(section);
 });
