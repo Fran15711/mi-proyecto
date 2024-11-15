@@ -549,21 +549,9 @@ document.querySelector('.seccion7 #ajax-contact').addEventListener('submit', fun
     });
 });
 
-// Observer de intersección para sección 7
+// Eliminamos el IntersectionObserver y las animaciones
 document.addEventListener('DOMContentLoaded', () => {
   const section = document.querySelector('.seccion7');
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      // Verifica si la sección está interseccionando con el viewport
-      if (entry.isIntersecting) {
-        section.classList.add('active'); // Agrega la clase 'active' a toda la sección
-        observer.unobserve(entry.target); // Deja de observar una vez que la clase se activa
-      }
-    });
-  }, {
-    threshold: 0.9  // Cambiado a 0.9 para requerir que el 90% de la sección esté visible
-  });
-
-  observer.observe(section);
+  // Aseguramos que los elementos sean visibles desde el principio
+  section.classList.add('active');
 });
