@@ -526,32 +526,37 @@ $(document).ready(() => {
   });
 });
 
-// Función para enviar el formulario
-document.querySelector('.seccion7 #ajax-contact').addEventListener('submit', function (e) {
-  e.preventDefault();
-
-  const formData = new FormData(this);
-
-  fetch('https://formsubmit.co/francisconoriegaret15@gmail.com', {
-    method: 'POST',
-    body: formData
-  })
-    .then(response => {
-      if (response.ok) {
-        alert('Message sent successfully!');
-        this.reset();
-      } else {
-        alert('Error sending message.');
-      }
-    })
-    .catch(() => {
-      alert('Error sending message.');
-    });
-});
-
-// Eliminamos el IntersectionObserver y las animaciones
 document.addEventListener('DOMContentLoaded', () => {
   const section = document.querySelector('.seccion7');
   // Aseguramos que los elementos sean visibles desde el principio
-  section.classList.add('active');
+  if (section) {
+    section.classList.add('active');
+
+    // Función para enviar el formulario
+    const form = document.querySelector('.seccion7 #ajax-contact');
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+
+        fetch('https://formsubmit.co/francisconoriegaret15@gmail.com', {
+          method: 'POST',
+          body: formData
+        })
+          .then(response => {
+            if (response.ok) {
+              alert('Message sent successfully!');
+              this.reset();
+            } else {
+              alert('Error sending message.');
+            }
+          })
+          .catch(() => {
+            alert('Error sending message.');
+          });
+      });
+    }
+  }
 });
+
