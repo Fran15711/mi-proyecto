@@ -854,43 +854,48 @@ $(document).ready(() => {
 });
 
 // Función para enviar el formulario
-document.querySelector('.seccion7 #ajax-contact').addEventListener('submit', function (e) {
-  e.preventDefault();
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.querySelector('.seccion7 #ajax-contact');
+  if (form) {  // Verifica que el formulario exista
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
 
-  const formData = new FormData(this);
+      const formData = new FormData(this);
 
-  fetch('https://formsubmit.co/francisconoriegaret15@gmail.com', {
-    method: 'POST',
-    body: formData
-  })
-    .then(response => {
-      if (response.ok) {
-        alert('Message sent successfully!');
-        this.reset();
-      } else {
-        alert('Error sending message.');
-      }
-    })
-    .catch(() => {
-      alert('Error sending message.');
+      fetch('https://formsubmit.co/francisconoriegaret15@gmail.com', {
+        method: 'POST',
+        body: formData
+      })
+        .then(response => {
+          if (response.ok) {
+            alert('Message sent successfully!');
+            this.reset();
+          } else {
+            alert('Error sending message.');
+          }
+        })
+        .catch(() => {
+          alert('Error sending message.');
+        });
     });
-});
+  } else {
+    console.log('Formulario no encontrado.');
+  }
 
-// Observer de intersección para sección 7
-document.addEventListener('DOMContentLoaded', () => {
+  // Observer de intersección para sección 7
   const section = document.querySelector('.seccion7');
+  if (section) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          section.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.9 });
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      // Verifica si la sección está interseccionando con el viewport
-      if (entry.isIntersecting) {
-        section.classList.add('active'); // Agrega la clase 'active' a toda la sección
-        observer.unobserve(entry.target); // Deja de observar una vez que la clase se activa
-      }
-    });
-  }, {
-    threshold: 0.9  // Cambiado a 0.9 para requerir que el 90% de la sección esté visible
-  });
-
-  observer.observe(section);
+    observer.observe(section);
+  } else {
+    console.log('Sección no encontrada.');
+  }
 });
