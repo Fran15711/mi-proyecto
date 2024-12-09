@@ -141,12 +141,12 @@
     }
 
     .seccion1 h2 {
-        font-size: 2rem; /* Reducir tamaño del encabezado */
+        font-size: 1.5rem; /* Reducir tamaño del encabezado */
     }
 
     .seccion1 .text-box {
         width: 90%; /* Más espacio horizontal */
-        font-size: 1rem; /* Reducir tamaño del texto */
+        font-size: 0.8rem; /* Reducir tamaño del texto */
     }
 }
 
@@ -230,10 +230,10 @@
     }
 
     .seccion1-2 .button {
-        min-width: 110px; /* Botones más pequeños pero legibles */
+        min-width: 90px; /* Botones más pequeños pero legibles */
         min-height: 35px;
-        font-size: 0.5rem; /* Reducir tamaño de fuente */
-        padding: 6px 12px; /* Ajuste del espaciado interno */
+        font-size: 0.4rem; /* Reducir tamaño de fuente */
+        padding: 6px 4px; /* Ajuste del espaciado interno */
     }
 }
 
@@ -255,7 +255,7 @@
 
 @media (min-width: 720px) {
     .seccion1-3 {
-        height: 30vh; /* Ajuste para pantallas pequeñas */
+        height: 40vh; /* Ajuste para pantallas pequeñas */
     }
 }
 
@@ -1003,7 +1003,7 @@ select option:hover {
   left: 50%;
   transform: translate(-50%, -50%); /* Centra la tarjeta */
   user-select: none;
-  padding: 5vw; /* Espaciado interno relativo al viewport */
+
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-radius: 8px; /* Bordes redondeados */
@@ -1059,7 +1059,7 @@ select option:hover {
 
 .seccion4 p {
   line-height: 1.6; /* Altura de línea */
-  font-size: 3vmin; /* Tamaño de fuente relativo para el párrafo */
+  font-size: 2.5vmin; /* Tamaño de fuente relativo para el párrafo */
   color: #FFF; /* Color del texto */
 }
 
@@ -1254,7 +1254,7 @@ select option:hover {
 
 .seccion5 .card {
     width: 90vw;
-    height: calc(9 / 16 * 70vw);
+    height: calc(12 / 16 * 70vw);
     max-width: calc(16 / 9 * 70vh);
     max-height: 70vh;
     display: flex;
