@@ -114,6 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
     move();
 });
 
+//SECCION
 document.addEventListener("DOMContentLoaded", () => {
     // Crear modal dinámicamente
     const modal = document.createElement("div");
@@ -179,8 +180,8 @@ document.addEventListener("DOMContentLoaded", () => {
             event.preventDefault(); // Evitar el comportamiento predeterminado
             const url = link.href; // Obtener la URL del enlace
             const iframe = document.getElementById("modal-iframe");
-            iframe.src = url; // Establecer la URL en el iframe
-            modal.style.display = "block"; // Mostrar el modal
+   window.open(url, "_blank"); // Abrir en nueva pestaña
+
         });
     });
 
@@ -458,72 +459,52 @@ document.addEventListener('DOMContentLoaded', () => {
   currentImage.style.zIndex = '-1';
   seccion3.appendChild(currentImage);
 
-  let currentButtons = [];  // Guardar los botones creados
-  let currentDatatextElement = null; // Variable para almacenar el elemento de datatext actual
+  let currentButtons = [];
+  let currentDatatextElement = null;
 
-  // Inicializar los hexágonos para que se iluminen correctamente
   hexagons.forEach((hex, index) => {
     hex.addEventListener('click', () => {
-      removeButtons(); // Eliminar botones anteriores
-      changeImageWithSlider(hexData[index].image); // Animación de deslizamiento
+      removeButtons();
+      changeImageWithSlider(hexData[index].image);
       changeTextColor(hexData[index].textColor);
-      changeDatatext(hexData[index].datatext, hexData[index].textColor); // Cambiar el texto con transición
-      createHexButtons(hexData[index].buttons, hexData[index].textColor); // Crear botones del hexágono seleccionado
+      changeDatatext(hexData[index].datatext, hexData[index].textColor);
+      createHexButtons(hexData[index].buttons, hexData[index].textColor);
     });
   });
 
-  // Filtro de botones por ID2
   filtroId2.addEventListener('change', () => {
-    const selectedId2 = filtroId2.value.toLowerCase(); // Valor seleccionado en el filtro
-
-    // Limpiar todos los estilos anteriores antes de aplicar el nuevo filtro
+    const selectedId2 = filtroId2.value.toLowerCase();
     resetHexagonStyles();
 
-    // Crear botones con el filtro aplicado
     currentButtons.forEach(button => {
-      const isMatching = button.dataset.id2.toLowerCase() === selectedId2 || selectedId2 === ''; // Compara si el botón corresponde al filtro
-
-      if (selectedId2 === '' || isMatching) {
-        // Iluminar el botón
-        button.style.opacity = '1';
-        button.style.filter = 'none';
-      } else {
-        // Atenuar el botón
-        button.style.opacity = '0.3';
-        button.style.filter = 'grayscale(100%)';
-      }
+      const isMatching = button.dataset.id2.toLowerCase() === selectedId2 || selectedId2 === '';
+      button.style.opacity = isMatching ? '1' : '0.3';
+      button.style.filter = isMatching ? 'none' : 'grayscale(100%)';
     });
 
-    // Iluminar hexágonos de acuerdo al filtro
     hexagons.forEach((hex, index) => {
       const relatedButtons = hexData[index]?.buttons || [];
       const img = hex.querySelector('img');
-
-      // Verificar si algún botón coincide con el filtro
       const hasMatchingButton = relatedButtons.some(btn => btn.id2.toLowerCase() === selectedId2);
 
       if (selectedId2 === '' || hasMatchingButton) {
-        // Iluminar hexágono
         img.style.filter = 'none';
         img.style.opacity = '1';
       } else {
-        // Atenuar hexágono
         img.style.filter = 'grayscale(100%)';
         img.style.opacity = '0.1';
       }
     });
   });
 
-  // Restablecer todos los hexágonos al estado inicial
   function resetHexagonStyles() {
-    hexagons.forEach((hex) => {
+    hexagons.forEach(hex => {
       const img = hex.querySelector('img');
-      img.style.filter = 'none'; // Restaurar el estilo
-      img.style.opacity = '1'; // Restaurar la opacidad
+      img.style.filter = 'none';
+      img.style.opacity = '1';
     });
   }
 
-  // Cambiar la imagen con el slider
   function changeImageWithSlider(newImageSrc) {
     const newImage = document.createElement('img');
     newImage.src = newImageSrc;
@@ -542,34 +523,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     newImage.addEventListener('transitionend', () => {
-      if (currentImage) {
-        currentImage.remove();
-      }
+      if (currentImage) currentImage.remove();
       currentImage = newImage;
     });
   }
 
-  // Cambiar el color del texto
   function changeTextColor(color) {
     h2Element.style.color = color;
     pElement.style.color = color;
   }
 
-  // Crear botones dinámicos dentro de los hexágonos
   function createHexButtons(buttons, textColor) {
-    currentButtons = [];  // Reiniciar el array de botones actuales
+    currentButtons = [];
 
     buttons.forEach((buttonData, i) => {
-      const button = createButton(
-        buttonData.image,
-        buttonData.link,
-        buttonData.text,
-        textColor,
-        buttonData.id2
-      );
-
-      positionButtons(button, (i % 2 === 0 ? -35 : 30), (i < 2 ? -20 : 10));
-      currentButtons.push(button);  // Guardar los botones creados
+      const button = createButton(buttonData.image, buttonData.link, buttonData.text, textColor, buttonData.id2);
+      positionButtons(button, (i % 2 === 0 ? -35 : 30), (i < 2 ? -5 : 15));
+      currentButtons.push(button);
 
       setTimeout(() => {
         button.style.opacity = '1';
@@ -577,90 +547,66 @@ document.addEventListener('DOMContentLoaded', () => {
       }, i * 50);
     });
 
-    // Después de crear los botones, aplicar el filtro inmediatamente
     const selectedId2 = filtroId2.value.toLowerCase();
     currentButtons.forEach(button => {
       const isMatching = button.dataset.id2.toLowerCase() === selectedId2 || selectedId2 === '';
-      if (selectedId2 === '' || isMatching) {
-        button.style.opacity = '1';
-        button.style.filter = 'none';
-      } else {
-        button.style.opacity = '0.3';
-        button.style.filter = 'grayscale(100%)';
-      }
+      button.style.opacity = isMatching ? '1' : '0.1';
+      button.style.filter = isMatching ? 'none' : 'grayscale(100%)';
     });
   }
 
-  // Eliminar los botones anteriores
   function removeButtons() {
     currentButtons.forEach(button => button.remove());
-    currentButtons = []; // Limpiar la lista de botones
+    currentButtons = [];
   }
 
-  // Mostrar el texto del datatext con transición
- function changeDatatext(newText, textColor) {
-  if (currentDatatextElement) {
-    // Eliminar el texto actual con una animación
-    currentDatatextElement.style.opacity = '0';
+  function changeDatatext(newText, textColor) {
+    if (currentDatatextElement) {
+      currentDatatextElement.style.opacity = '0';
+      setTimeout(() => {
+        currentDatatextElement.remove();
+        createNewDatatext(newText, textColor);
+      }, 500);
+    } else {
+      createNewDatatext(newText, textColor);
+    }
+  }
+
+  function createNewDatatext(newText, textColor) {
+    const container = document.createElement('div');
+    container.style.position = 'absolute';
+    container.style.transition = 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out';
+    container.style.opacity = '0';
+    container.style.maxWidth = '31vmin';
+    container.style.margin = '0 auto';
+    container.style.textAlign = 'center';
+    container.style.zIndex = '100';
+    container.style.borderRadius = '10px';
+    container.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    container.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.3)';
+    seccion3.appendChild(container);
+
+    const datatextElement = document.createElement('p');
+    datatextElement.textContent = newText;
+    datatextElement.style.color = textColor;
+    datatextElement.style.fontSize = '0.8rem';
+    datatextElement.style.fontFamily = "'Poppins', sans-serif";
+    datatextElement.style.margin = '0';
+    datatextElement.style.lineHeight = '1.5';
+    datatextElement.style.wordWrap = 'break-word';
+    container.appendChild(datatextElement);
+
+    container.style.left = '50%';
+    container.style.top = '91%';
+    container.style.transform = 'translateX(-50%)';
+
     setTimeout(() => {
-      currentDatatextElement.remove(); // Eliminar el antiguo datatext
-      createNewDatatext(newText, textColor); // Crear el nuevo
-    }, 500); // Eliminar después de 0.5s (el tiempo de transición de desvanecimiento)
-  } else {
-    createNewDatatext(newText, textColor); // Crear el nuevo datatext si no existe
+      container.style.opacity = '1';
+    }, 50);
+
+    currentDatatextElement = container;
   }
-}
 
-
-function createNewDatatext(newText, textColor) {
-  // Crear el contenedor del texto
-  const container = document.createElement('div');
-  container.style.position = 'absolute';  
-  container.style.transition = 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out';
-  container.style.opacity = '0';  // Empezar con opacidad 0
-  container.style.maxWidth = '31vmin';
-  container.style.margin = '0 auto';
-  container.style.textAlign = 'center';  
-  container.style.zIndex = '100';  
-  
-  container.style.borderRadius = '10px';  
-  container.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-  container.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.3)';
-  seccion3.appendChild(container);
-
-  // Crear el texto
-  const datatextElement = document.createElement('p');
-  datatextElement.textContent = newText;
-  datatextElement.style.color = textColor;
-  datatextElement.style.fontSize = '0.8rem';
-  datatextElement.style.fontFamily = "'Poppins', sans-serif";
-  datatextElement.style.margin = '0';
-  datatextElement.style.lineHeight = '1.5';
-  datatextElement.style.wordWrap = 'break-word';
-
-  container.appendChild(datatextElement);
-
-  // Posicionar el contenedor
-  const leftPosition = '50%';
-  const topPosition = '91%';
-  container.style.left = leftPosition;
-  container.style.top = topPosition;
-  container.style.transform = 'translateX(-50%)';
-
-  // Activar la animación de transición para mostrar el texto
-  setTimeout(() => {
-    container.style.opacity = '1';
-  }, 50);
-
-  // Guardar el contenedor como el elemento actual de datatext
-  currentDatatextElement = container;
-  return container;
-}
-
-
-
-
-  // Crear un botón dinámico
   function createButton(image, link, text, textColor, id2) {
     const button = document.createElement('button');
     button.classList.add('dynamic-button');
@@ -679,7 +625,6 @@ function createNewDatatext(newText, textColor) {
     button.style.alignItems = 'center';
     button.style.justifyContent = 'center';
 
-
     const img = document.createElement('img');
     img.src = image;
     img.alt = '';
@@ -694,13 +639,11 @@ function createNewDatatext(newText, textColor) {
     span.style.textAlign = 'center';
     span.style.wordWrap = 'break-word';
     span.style.lineHeight = '1.5';
-
-    span.style.display = 'inline-block';
     span.style.marginTop = '10px';
 
     button.appendChild(img);
     button.appendChild(span);
-    button.dataset.id2 = id2;  // Guardar el id2 para comparar con el filtro
+    button.dataset.id2 = id2;
 
     button.addEventListener('click', () => {
       openPopup(link);
@@ -709,14 +652,12 @@ function createNewDatatext(newText, textColor) {
     return button;
   }
 
-  // Posicionar los botones en la pantalla
   function positionButtons(button, leftVW, topVH) {
     button.style.left = `calc(50vw + ${leftVW}vw)`;
     button.style.top = `calc(50vh + ${topVH}vh)`;
     seccion3.appendChild(button);
   }
 
-  // Abrir un popup al hacer clic en un enlace
   function openPopup(url) {
     const popup = document.createElement('div');
     popup.style.position = 'fixed';
@@ -729,29 +670,25 @@ function createNewDatatext(newText, textColor) {
     popup.style.borderRadius = '8px';
     popup.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
     popup.style.zIndex = '1000';
-    popup.style.display = 'flex';
-    popup.style.flexDirection = 'column';
-    popup.style.alignItems = 'center';
-    popup.style.justifyContent = 'center';
 
     const iframe = document.createElement('iframe');
     iframe.src = url;
     iframe.style.width = '100%';
     iframe.style.height = '100%';
     iframe.style.border = 'none';
-
     popup.appendChild(iframe);
 
     const closeButton = document.createElement('button');
-    closeButton.textContent = 'Cerrar';
-    closeButton.style.marginTop = '16px';
-    closeButton.style.padding = '8px 16px';
+    closeButton.textContent = 'Close';
+    closeButton.style.position = 'absolute';
+    closeButton.style.top = '10px';
+    closeButton.style.right = '10px';
     closeButton.style.border = 'none';
-    closeButton.style.backgroundColor = '#333';
+    closeButton.style.background = 'red';
     closeButton.style.color = 'white';
+    closeButton.style.padding = '5px 10px';
     closeButton.style.borderRadius = '4px';
     closeButton.style.cursor = 'pointer';
-
     closeButton.addEventListener('click', () => {
       popup.remove();
     });
@@ -761,6 +698,35 @@ function createNewDatatext(newText, textColor) {
   }
 });
 
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const hexagons = document.querySelectorAll('.hex');
+  const filtro1 = document.getElementById('filtro1'); // Filtro para sectores
+
+  filtro1.addEventListener('change', () => {
+    const selectedSector = filtro1.value.toLowerCase(); // Valor seleccionado en el filtro
+
+    hexagons.forEach((hex, index) => {
+      const sector = hex.getAttribute('id')?.toLowerCase(); // Asegúrate de que cada hex tenga un atributo data-sector
+      const img = hex.querySelector('img');
+
+      if (selectedSector === '') {
+        // Restaurar colores si se selecciona la opción por defecto
+        img.style.filter = 'none';
+        img.style.opacity = '1';
+      } else if (sector === selectedSector) {
+        // Mostrar hexágonos relacionados con el sector seleccionado
+        img.style.filter = 'none';
+        img.style.opacity = '1';
+      } else {
+        // Atenuar hexágonos no relacionados
+        img.style.filter = 'grayscale(100%)';
+        img.style.opacity = '0.5';
+      }
+    });
+  });
+});
 
 
 
