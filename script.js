@@ -665,14 +665,20 @@ document.addEventListener('DOMContentLoaded', () => {
     seccion3.appendChild(button);
   }
 
-  function openPopup(url) {
+ function openPopup(url) {
+  const isMobile = window.innerWidth < 768; // Definir como móvil si el ancho es menor a 768px
+
+  if (isMobile) {
+    // En dispositivos móviles, abrir en una nueva pestaña
+    window.open(url, '_blank');
+  } else {
     const popup = document.createElement('div');
     popup.style.position = 'fixed';
     popup.style.top = '50%';
     popup.style.left = '50%';
     popup.style.transform = 'translate(-50%, -50%)';
-    popup.style.width = '80%';
-    popup.style.height = '40%';
+    popup.style.width = '60vw';
+    popup.style.height = '60vh';
     popup.style.backgroundColor = 'white';
     popup.style.borderRadius = '8px';
     popup.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
@@ -702,7 +708,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     popup.appendChild(closeButton);
     document.body.appendChild(popup);
-  }
+  } }
 });
 
 
