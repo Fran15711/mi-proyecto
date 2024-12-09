@@ -585,6 +585,7 @@
   place-items: center;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
   position: relative; /* Posicionamiento relativo para contener los elementos absolutos */
+  overflow:hidden;
 }
 
 .seccion2 .item {
@@ -842,7 +843,7 @@ select option:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 130vmin;
+    height: 100vh;
     z-index: 2;
 }}
 
@@ -1058,7 +1059,7 @@ select option:hover {
 
 .seccion4 p {
   line-height: 1.6; /* Altura de línea */
-  font-size: 2vmin; /* Tamaño de fuente relativo para el párrafo */
+  font-size: 3vmin; /* Tamaño de fuente relativo para el párrafo */
   color: #FFF; /* Color del texto */
 }
 
@@ -1439,6 +1440,17 @@ overflow:hidden;
   text-align: center;
 }
 
+
+
+.seccion7 h1 {
+  color: red;
+  font-weight: bold; /* Usamos Poppins en bold */
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  top:16vh;
+  position:relative;
+}
+
 @media screen and (max-width: 768px) {
 .seccion7 h1 {
   color: red;
@@ -1450,17 +1462,6 @@ overflow:hidden;
 }
 }
 
-.seccion7 h1 {
-  color: red;
-  font-weight: bold; /* Usamos Poppins en bold */
-  font-size: 3.5rem;
-  margin-bottom: 10px;
-  top:16vh;
-  position:relative;
-}
-
-
-
 .seccion7 p {
   margin-bottom: 20px;
   position:relative;
@@ -1468,6 +1469,14 @@ overflow:hidden;
   font-size:1.2rem;
   font-weight: normal; /* Poppins normal para el párrafo */
 }
+@media screen and (max-width: 768px) {
+.seccion7 p {
+  margin-bottom: 20px;
+  position:relative;
+  top:16vh;
+  font-size:1rem;
+  font-weight: normal; /* Poppins normal para el párrafo */
+}}
 
 /* Visibilidad inicial (todos los elementos ocultos) */
 .seccion7 h1,
