@@ -536,10 +536,17 @@ document.addEventListener('DOMContentLoaded', () => {
   function createHexButtons(buttons, textColor) {
     currentButtons = [];
 
-    buttons.forEach((buttonData, i) => {
-      const button = createButton(buttonData.image, buttonData.link, buttonData.text, textColor, buttonData.id2);
-      positionButtons(button, (i % 2 === 0 ? -35 : 30), (i < 2 ? -5 : 15));
-      currentButtons.push(button);
+  const isMobile = window.innerWidth < 450;
+
+  buttons.forEach((buttonData, i) => {
+    // Configurar valores dinámicos de posición
+    const offsetX = isMobile ? (i % 2 === 0 ? -35 : 30) : (i % 2 === 0 ? -35 : 30);
+    const offsetY = isMobile ? (i < 2 ? 20 : 40) : (i < 2 ? -5 : 25);
+
+    // Crear el botón con las posiciones ajustadas
+    const button = createButton(buttonData.image, buttonData.link, buttonData.text, textColor, buttonData.id2);
+    positionButtons(button, offsetX, offsetY);
+    currentButtons.push(button);
 
       setTimeout(() => {
         button.style.opacity = '1';
@@ -577,7 +584,7 @@ document.addEventListener('DOMContentLoaded', () => {
     container.style.position = 'absolute';
     container.style.transition = 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out';
     container.style.opacity = '0';
-    container.style.maxWidth = '31vmin';
+    container.style.maxWidth = '50vmin';
     container.style.margin = '0 auto';
     container.style.textAlign = 'center';
     container.style.zIndex = '100';
