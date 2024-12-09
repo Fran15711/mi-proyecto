@@ -106,7 +106,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+
     box-sizing: border-box;
     text-align: center;
     padding: 0 5vw; /* Margen interno dinámico para evitar desbordamientos */
@@ -243,7 +243,7 @@
     position: relative;
     overflow: hidden;
     font-family: "Poppins", sans-serif;
-    height: 25vh;
+
     box-sizing: border-box;
     text-align: center;
     background-color: lightgrey;
@@ -255,7 +255,7 @@
 
 @media (min-width: 720px) {
     .seccion1-3 {
-        height: 15vh; /* Ajuste para pantallas pequeñas */
+        height: 30vh; /* Ajuste para pantallas pequeñas */
     }
 }
 
@@ -403,9 +403,10 @@
   align-content: center;
 
 }
+
 @media (max-width: 720px) {
     .seccion2-3 {
-        height: 40vh;
+        height: 50vh;
     }
   
   
@@ -413,7 +414,7 @@
 
 .seccion2-3 h2{
   font-size:3.5rem;
-  margin-top:1.2rem;
+  margin-top:2rem;
   margin-bottom:1.2rem;
       transform: translateY(-8vh);
     margin-left: 4vw;
@@ -424,7 +425,7 @@
 @media (max-width: 720px) {
 .seccion2-3 h2{
   font-size:2.5rem;
-  margin-top:1.2rem;
+  margin-top:2rem;
   margin-bottom:1.2rem;
       transform: translateY(-8vh);
     margin-left: 4vw;
@@ -1041,7 +1042,7 @@ select option:hover {
 }
 
 .seccion4 h1 {
-  font-size: 3vmin; /* Tamaño de fuente relativo al ancho de la pantalla */
+  font-size: 5vmin; /* Tamaño de fuente relativo al ancho de la pantalla */
   margin-bottom: 2vh; /* Espacio inferior relativo a la altura de la pantalla */
 }
 
@@ -1057,7 +1058,7 @@ select option:hover {
 
 .seccion4 p {
   line-height: 1.6; /* Altura de línea */
-  font-size: 1.4vmin; /* Tamaño de fuente relativo para el párrafo */
+  font-size: 2vmin; /* Tamaño de fuente relativo para el párrafo */
   color: #FFF; /* Color del texto */
 }
 
@@ -1102,7 +1103,7 @@ select option:hover {
 
 .seccion4 .gradient-bg {
   width: 100vw;
-  height: 50vh;
+  height: 100vh;
   position: relative;
   overflow: hidden;
   background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
@@ -1438,6 +1439,17 @@ overflow:hidden;
   text-align: center;
 }
 
+@media screen and (max-width: 768px) {
+.seccion7 h1 {
+  color: red;
+  font-weight: bold; /* Usamos Poppins en bold */
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  top:16vh;
+  position:relative;
+}
+}
+
 .seccion7 h1 {
   color: red;
   font-weight: bold; /* Usamos Poppins en bold */
@@ -1616,5 +1628,3 @@ right: 0vw;
     background-color: darkred; /* Cambio de color al pasar el mouse */
     transform: scale(1.5); /* Efecto de aumento al hacer hover */
 }
-
-
