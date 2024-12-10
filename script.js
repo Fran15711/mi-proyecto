@@ -540,8 +540,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   buttons.forEach((buttonData, i) => {
     // Configurar valores dinámicos de posición
-    const offsetX = isMobile ? (i % 2 === 0 ? -35 : 30) : (i % 2 === 0 ? -35 : 30);
-    const offsetY = isMobile ? (i < 2 ? 20 : 40) : (i < 2 ? -5 : 25);
+    const offsetX = isMobile ? (i % 2 === 0 ? -40 : 25) : (i % 2 === 0 ? -35 : 30);
+    const offsetY = isMobile ? (i < 2 ? 10 : 60) : (i < 2 ? -5 : 25);
 
     // Crear el botón con las posiciones ajustadas
     const button = createButton(buttonData.image, buttonData.link, buttonData.text, textColor, buttonData.id2);
@@ -614,12 +614,10 @@ document.addEventListener('DOMContentLoaded', () => {
     currentDatatextElement = container;
   }
 
-  function createButton(image, link, text, textColor, id2) {
+function createButton(image, link, text, textColor, id2) {
     const button = document.createElement('button');
     button.classList.add('dynamic-button');
     button.style.position = 'absolute';
-    button.style.width = '8vw';
-    button.style.height = '10vw';
     button.style.opacity = '0';
     button.style.transform = 'scale(0.8)';
     button.style.transition = 'opacity 0.5s ease, transform 0.3s ease';
@@ -632,23 +630,55 @@ document.addEventListener('DOMContentLoaded', () => {
     button.style.alignItems = 'center';
     button.style.justifyContent = 'center';
 
+    // Imagen dentro del botón
     const img = document.createElement('img');
     img.src = image;
     img.alt = '';
-    img.style.width = '4vw';
-    img.style.height = 'auto';
 
+    const updateImageSize = () => {
+        if (window.matchMedia('(max-width: 768px)').matches) {
+            // En pantallas pequeñas, dejar que la imagen se ajuste sin definir un width fijo
+            img.style.width = '12vw';  // El ancho es automático y ajustará la imagen
+            button.style.width = '12vw';  // Deja que el ancho del botón se ajuste al tamaño de la imagen
+            button.style.height = '12vw';  // Deja que la altura se ajuste automáticamente
+        } else {
+            // En pantallas grandes, usar un tamaño fijo para la imagen y el botón
+            img.style.width = '4vw';
+            button.style.width = '8vw';  // El ancho del botón sigue siendo fijo
+            button.style.height = '10vw';  // El alto también es fijo en pantallas grandes
+        }
+    };
+
+    // Llamar a la función para establecer el tamaño al cargar la página y al cambiar el tamaño de la ventana
+    updateImageSize();
+    window.addEventListener('resize', updateImageSize);
+
+    // Agregar la imagen al botón
+    button.appendChild(img);
+
+    // Crear y agregar el texto
     const span = document.createElement('span');
     span.textContent = text;
     span.style.color = textColor;
-    span.style.fontSize = '0.8rem';
     span.style.fontFamily = "'Poppins', sans-serif";
     span.style.textAlign = 'center';
     span.style.wordWrap = 'break-word';
     span.style.lineHeight = '1.5';
+  span.style.display = 'block';
     span.style.marginTop = '10px';
 
-    button.appendChild(img);
+    // Establecer tamaño de fuente en función del tamaño de la ventana
+    const updateFontSize = () => {
+        if (window.matchMedia('(max-width: 768px)').matches) {
+            span.style.fontSize = '0.7rem';
+        } else {
+            span.style.fontSize = '0.8rem';
+        }
+    };
+
+    updateFontSize();
+    window.addEventListener('resize', updateFontSize);
+
     button.appendChild(span);
     button.dataset.id2 = id2;
 
@@ -657,7 +687,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     return button;
-  }
+}
+
 
   function positionButtons(button, leftVW, topVH) {
     button.style.left = `calc(50vw + ${leftVW}vw)`;
@@ -712,7 +743,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
+//FILTRO SECCIONES
 document.addEventListener('DOMContentLoaded', () => {
   const hexagons = document.querySelectorAll('.hex');
   const filtro1 = document.getElementById('filtro1'); // Filtro para sectores
