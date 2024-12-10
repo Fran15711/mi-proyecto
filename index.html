@@ -226,10 +226,10 @@ Estrategia basada en "They Ask, You Answer", confianza con clientes, SEO, conten
     </select>
   </div>
 </div>
-
-<div class="panal">
         <h2>Proyectos destacados</h2>
   <p>Agrupados por marca</p>
+<div class="panal">
+
     <div class="hex-row">
       <div class="hex" id="Seguridad">
         <img src="https://raw.githubusercontent.com/Fran15711/prueba1/refs/heads/main/loguin%20centinela.png" alt="Icono">
@@ -685,6 +685,14 @@ Estrategia basada en "They Ask, You Answer", confianza con clientes, SEO, conten
   transform: translateY(50%);
   transition: transform 1s ease;
 }
+    
+    
+  @media (max-width: 720px) {  
+    .grab-zone-wrapper{display: none;}
+}
+    
+    
+    
 
 .trap-button {
   position: relative;
@@ -913,7 +921,7 @@ class App extends React.Component {
       React.createElement("button", {
         className: "trap-button",
         onClick: this.handleButtonClicked },
-      gameOver && "Nice one",
+      gameOver && "Ándale :(",
       cursorGrabbed && "Ándale :(",
       !gameOver && !cursorGrabbed && "SALIR"), /*#__PURE__*/
 
