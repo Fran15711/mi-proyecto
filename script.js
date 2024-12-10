@@ -275,7 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
      {
       buttons: [
-        { image: 'https://raw.githubusercontent.com/Fran15711/botones/refs/heads/main/investigaciondemk.png', link: 'https://fran15711.github.io/memoriasdelandrade/', text:'Memorias de la Andrade (Abre otra ventana)', id2: 'Investigación de Mercado' },
+        { image: 'https://raw.githubusercontent.com/Fran15711/botones/refs/heads/main/investigaciondemk.png', link: 'https://fran15711.github.io/memoriasdelandrade/', text:'Memorias de la Andrade (Abre otra ventana)', id2: 'Investigación de Mercado'},
         { image: 'https://raw.githubusercontent.com/Fran15711/botones/refs/heads/main/presentacion.png', link: 'https://fran15711.github.io/cuadripticobka/', text:'Cuadríptico', id2: 'Presentación de Ventas' },
         { image: 'https://raw.githubusercontent.com/Fran15711/botones/refs/heads/main/posts6.png', link: 'https://fran15711.github.io/postsbikia/', text:'Posts redes sociales' , id2: 'Posts'},
         { image: 'https://raw.githubusercontent.com/Fran15711/botones/refs/heads/main/paginaweb.png', link: 'https://bikia.mx/', text: 'Página web', id2: 'Página web - E-commerce' }
@@ -540,8 +540,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   buttons.forEach((buttonData, i) => {
     // Configurar valores dinámicos de posición
-    const offsetX = isMobile ? (i % 2 === 0 ? -40 : 25) : (i % 2 === 0 ? -35 : 30);
-    const offsetY = isMobile ? (i < 2 ? 10 : 60) : (i < 2 ? -5 : 25);
+    const offsetX = isMobile ? (i % 2 === 0 ? -45 : 30) : (i % 2 === 0 ? -35 : 30);
+    const offsetY = isMobile ? (i < 2 ? 20 : 65) : (i < 2 ? -5 : 25);
 
     // Crear el botón con las posiciones ajustadas
     const button = createButton(buttonData.image, buttonData.link, buttonData.text, textColor, buttonData.id2);
@@ -593,7 +593,7 @@ document.addEventListener('DOMContentLoaded', () => {
     container.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.3)';
     seccion3.appendChild(container);
 
-    const datatextElement = document.createElement('p');
+    const datatextElement = document.createElement('h3');
     datatextElement.textContent = newText;
     datatextElement.style.color = textColor;
     datatextElement.style.fontSize = '0.8rem';
@@ -708,8 +708,8 @@ function createButton(image, link, text, textColor, id2) {
     popup.style.top = '50%';
     popup.style.left = '50%';
     popup.style.transform = 'translate(-50%, -50%)';
-    popup.style.width = '60vw';
-    popup.style.height = '60vh';
+    popup.style.width = '70vw';
+    popup.style.height = '70vh';
     popup.style.backgroundColor = 'white';
     popup.style.borderRadius = '8px';
     popup.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
@@ -723,7 +723,7 @@ function createButton(image, link, text, textColor, id2) {
     popup.appendChild(iframe);
 
     const closeButton = document.createElement('button');
-    closeButton.textContent = 'Close';
+    closeButton.textContent = 'Cerrar';
     closeButton.style.position = 'absolute';
     closeButton.style.top = '10px';
     closeButton.style.right = '10px';
