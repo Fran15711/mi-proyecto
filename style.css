@@ -106,7 +106,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+height:50vh;
     box-sizing: border-box;
     text-align: center;
     padding: 0 5vw; /* Margen interno dinámico para evitar desbordamientos */
@@ -180,7 +180,7 @@
     justify-content: center;
     align-items: center;
     gap: 20px; /* Espaciado fijo entre botones */
-    margin-top: 2vh; /* Espaciado superior ajustado */
+    margin-top: 6vh; /* Espaciado superior ajustado */
 }
 @media screen and (max-width: 768px) {
 .seccion1-2 .button-container {
@@ -195,8 +195,8 @@
 
 /* Botones */
 .seccion1-2 .button {
-    min-width: 140px; /* Ancho mínimo más compacto */
-    min-height: 40px; /* Altura mínima más compacta */
+    min-width: 300px; /* Ancho mínimo más compacto */
+    min-height: 60px; /* Altura mínima más compacta */
     display: inline-flex;
     font-family: 'Poppins', sans-serif;
     font-size: 0.9rem; /* Tamaño reducido para adaptarse mejor */
@@ -262,7 +262,7 @@
 
 @media (max-width: 720px) {
     .seccion1-3 {
-        height: 15vh; /* Ajuste para pantallas pequeñas */
+        height: 17vh; /* Ajuste para pantallas pequeñas */
     }
 }
 
@@ -433,7 +433,7 @@
 
 @media (max-width: 720px) {
     .seccion2-3 {
-        height: 50vh;
+        height: 60vh;
     }
   
   
@@ -462,7 +462,7 @@
 .seccion2-3 h2{
   font-size:2.5rem;
   margin-top:4rem;
-  margin-bottom:1.2rem;
+  margin-bottom:-2.8rem;
       transform: translateY(-8vh);
     margin-left: 4vw;
 
@@ -913,9 +913,11 @@ select option:hover {
 
 /* Estilo para el título */
 .seccion3 h2 {
-  font-size: 3.5em;
+position:relative;
+  font-size: 3rem;
   font-weight:bold;
   color: #333;
+    top:4rem;
   z-index:2;
   
 
@@ -924,7 +926,9 @@ select option:hover {
 
 /* Estilo para el párrafo */
 .seccion3 p {
-  font-size: 1.2em;
+  position:relative;
+  font-size: 1.2rem;
+  top:5rem;
   color: #666;
   margin-bottom: 30px;
  font-family: 'Poppins', sans-serif;
@@ -1527,6 +1531,17 @@ width:72vw
   text-align: center;
 }
 
+  @media (max-width: 720px) {  
+.seccion6 .count-text {
+  font-size: 2.7vw; /* Tamaño de fuente ajustado al ancho de la pantalla */
+  font-weight: normal;
+  margin-top: 1vh;
+  margin-bottom: 0;
+  text-align: center;
+}}
+
+
+
 .seccion6 .fa-2x {
   margin: 0 auto;
   float: none;
@@ -1554,7 +1569,7 @@ width:72vw
   justify-content: center;
   align-items: center;
 overflow:hidden;
-  height:80vh;
+  height:70vh;
   margin: 0 auto;
   text-align: center;
     font-family: 'Poppins', sans-serif;
@@ -1563,7 +1578,23 @@ overflow:hidden;
   color: #333;
   text-align: center;
 }
-
+  @media (max-width: 720px) {  
+/* Estilos de la sección */
+.seccion7 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+overflow:hidden;
+  height:90vh;
+  margin: 0 auto;
+  text-align: center;
+    font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  text-align: center;
+}}
 
 
 .seccion7 h1 {
@@ -1698,6 +1729,12 @@ overflow:hidden;
   margin-top: 5vh;
   position: absolute;
 }
+      @media (max-width: 720px) {
+/* Estilos del formulario */
+.seccion7 .contact-form {
+  margin-top: 16vh;
+  position: absolute;
+}}
 
 .seccion7 .form-group {
   margin-bottom: 15px;
