@@ -155,7 +155,7 @@
 .seccion1-2 {
     overflow: hidden;
     font-family: "Poppins", sans-serif;
-    display: flex;
+  
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -182,6 +182,16 @@
     gap: 20px; /* Espaciado fijo entre botones */
     margin-top: 2vh; /* Espaciado superior ajustado */
 }
+@media screen and (max-width: 768px) {
+.seccion1-2 .button-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual ancho */
+    gap: 20px; /* Espaciado entre los botones */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    margin-top: 2vh;
+}}
+
 
 /* Botones */
 .seccion1-2 .button {
@@ -225,14 +235,10 @@
         margin-bottom: 0.7rem;
     }
 
-    .seccion1-2 .button-container {
-        gap: 0px; /* Menor separación entre botones */
-    }
-
     .seccion1-2 .button {
         min-width: 90px; /* Botones más pequeños pero legibles */
         min-height: 35px;
-        font-size: 0.4rem; /* Reducir tamaño de fuente */
+        font-size: 0.7rem; /* Reducir tamaño de fuente */
         padding: 6px 4px; /* Ajuste del espaciado interno */
     }
 }
@@ -251,11 +257,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+   height: 20vh; /* Ajuste para pantallas pequeñas */
 }
 
-@media (min-width: 720px) {
+@media (max-width: 720px) {
     .seccion1-3 {
-        height: 40vh; /* Ajuste para pantallas pequeñas */
+        height: 15vh; /* Ajuste para pantallas pequeñas */
     }
 }
 
@@ -364,6 +371,26 @@
 
 
 
+@media (max-width: 720px) {
+#mouse-scroll span {
+    display: block;
+    width: 8px;
+    height: 8px;
+    transform: rotate(45deg);
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+    margin: 5px 0;
+}
+
+#mouse-scroll .mouse {
+    height: 25px;
+    width: 16px;
+    border-radius: 10px;
+    border: 2px solid #000;
+    position: relative;
+}}
+
+
 /* seccion2-2 */
 
 .seccion2-2 {
@@ -422,18 +449,6 @@
   font-weight:bold;
 
 }
-@media (max-width: 720px) {
-.seccion2-3 h2{
-  font-size:2.5rem;
-  margin-top:2rem;
-  margin-bottom:1.2rem;
-      transform: translateY(-8vh);
-    margin-left: 4vw;
-
-  font-weight:bold;
-
-}
-}
 
 .seccion2-3 .button-container {
     display: flex;
@@ -441,6 +456,28 @@
     align-items: center; /* Centra los botones verticalmente */
     gap: 1rem; /* Espacio entre los botones */
     margin-top: 2rem; /* Margen superior para separación del título */
+}
+
+@media (max-width: 720px) {
+.seccion2-3 h2{
+  font-size:2.5rem;
+  margin-top:4rem;
+  margin-bottom:1.2rem;
+      transform: translateY(-8vh);
+    margin-left: 4vw;
+
+  font-weight:bold;
+
+}
+  .seccion2-3 .button-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center; /* Centra los botones horizontalmente */
+    justify-items: center; /* Centra los botones verticalmente */
+    gap: 1rem; /* Espacio entre los botones */
+    margin-top: 2rem; /* Margen superior para separación del título */
+}
+  
 }
 
 .shiny-button {
@@ -492,6 +529,42 @@
     background: radial-gradient(ellipse at top, rgb(67, 76, 100), rgb(48, 49, 51)),
                 radial-gradient(ellipse at bottom, rgb(89, 69, 89), rgb(107, 139, 174));
 }
+  
+  .shiny-button.enlace1 .button-image {
+    position: absolute;
+    bottom: 1vmin; /* Ajusta según necesites */
+    right: 2vmin; /* Ajusta según necesites */
+    width: 6vmin; /* Ajusta el tamaño */
+    height: auto;
+    pointer-events: none; /* Para que no interfiera con el clic del botón */
+}
+
+.shiny-button.enlace2 .button-image {
+    position: absolute;
+    bottom: 1vmin; /* Ajusta según necesites */
+    right: 2vmin; /* Ajusta según necesites */
+    width: 12vmin; /* Ajusta el tamaño */
+    height: auto;
+    pointer-events: none; /* Para que no interfiera con el clic del botón */
+}
+
+.shiny-button.enlace3 .button-image {
+    position: absolute;
+    bottom: 1vmin; /* Ajusta según necesites */
+    right: 2vmin; /* Ajusta según necesites */
+    width: 12vmin; /* Ajusta el tamaño */
+    height: auto;
+    pointer-events: none; /* Para que no interfiera con el clic del botón */
+}
+
+.shiny-button.enlace4 .button-image {
+    position: absolute;
+    bottom: 1vmin; /* Ajusta según necesites */
+    right: 2vmin; /* Ajusta según necesites */
+    width: 18vmin; /* Ajusta el tamaño */
+    height: auto;
+    pointer-events: none; /* Para que no interfiera con el clic del botón */
+}
   }
 
 .seccion2-3 .background {
@@ -533,8 +606,8 @@
 .seccion2-3 .shiny-button {
     margin: 0.2rem;
     padding: 1.3rem;
-    width: 20vmin; /* Cambiado a 100px para un botón cuadrado */
-    height: 20vmin; /* Cambiado a 100px para un botón cuadrado */
+    width: 30vmin; /* Cambiado a 100px para un botón cuadrado */
+    height: 30vmin; /* Cambiado a 100px para un botón cuadrado */
     position: relative;
     font-size: 1rem;
     z-index: 1;
@@ -563,7 +636,7 @@
     margin: 0;
     text-shadow: 0 0.2rem 0.2rem rgb(200, 222, 237);
   color:white;
-  font-size:1.6vmin;
+  font-size:3vmin;
 }}
 
 .seccion2-3 canvas {
@@ -717,10 +790,10 @@ font-size:3rem;
 
 @media (max-width: 650px) {
   .seccion2 .content .title {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
   .seccion2 .content .description {
-    font-size: 0.65rem;
+    font-size: 0.75rem;
   }
   .seccion2 .content button {
     font-size: 0.7rem;
@@ -837,15 +910,6 @@ select option:hover {
   z-index:2;
 }
 
-@media (max-width: 720px) {
-.seccion3 .panal {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    z-index: 2;
-}}
 
 /* Estilo para el título */
 .seccion3 h2 {
@@ -943,6 +1007,29 @@ select option:hover {
 }
 
 
+@media (max-width: 720px) {
+/* Estilos para los hexágonos */
+.seccion3 .hex {
+    width: 13vmin; /* Ancho proporcional */
+    height: 11.5vmin; /* Alto proporcional */
+    background-color: rgba(192, 192, 192, 0.5); /* Color gris con 50% de transparencia */
+    clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s; /* Animación al hacer hover */;
+  z-index:2;
+}
+
+.seccion3 .panal {
+display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    z-index: 2;
+}}
 
 /* Seccion 4 */
 
@@ -1010,6 +1097,11 @@ select option:hover {
   box-shadow: 0 4px 90px rgba(0, 0, 0, 0.1); /* Sombra de la tarjeta */
   overflow: hidden; /* Evitar desbordamiento */
 }
+
+@media (max-width: 720px) {
+.seccion4 .card {
+width:72vw
+}}
 
 .seccion4 .card:before {
   content: "";
@@ -1228,6 +1320,8 @@ select option:hover {
 
 
 
+
+/*SECCION5*/
 .seccion5 {}
 .seccion5 {
     display: flex;
@@ -1251,6 +1345,30 @@ select option:hover {
     text-align: center;      /* Centra el texto horizontalmente */
     margin-bottom: 2rem;     /* Espacio entre el párrafo y el card */
 }
+
+@media (max-width: 720px) {
+.seccion5 p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;      /* Centra el texto horizontalmente */
+    margin-bottom: 2rem;     /* Espacio entre el párrafo y el card */
+  padding:2px;
+}}
+
+.seccion5 .card {
+    width: 90vw;
+    height: calc(12 / 16 * 70vw);
+    max-width: calc(16 / 9 * 70vh);
+    max-height: 70vh;
+    display: flex;
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1613479/inception.jpg') center center / cover;
+    overflow: hidden;
+    margin-top: 2rem; /* Espacio entre el card y el texto */
+}
+
 
 .seccion5 .card {
     width: 90vw;
@@ -1341,6 +1459,8 @@ select option:hover {
 }
 
 
+
+/*SECCION6*/
 .seccion6 {
   font-family: "Poppins", sans-serif;
   padding: 5vw; /* Ajustado a 5vw para ser relativo al ancho de la pantalla */
@@ -1422,6 +1542,10 @@ select option:hover {
 .seccion6 h3 {
   font-size:1vw
 }
+@media screen and (max-width: 768px) {
+.seccion6 h3 {
+  font-size:4vw
+}}
 
 /* Estilos de la sección */
 .seccion7 {
@@ -1476,6 +1600,7 @@ overflow:hidden;
   top:16vh;
   font-size:1rem;
   font-weight: normal; /* Poppins normal para el párrafo */
+  padding:2px;
 }}
 
 /* Visibilidad inicial (todos los elementos ocultos) */
@@ -1589,6 +1714,23 @@ overflow:hidden;
   transition: border-color 0.3s;
 }
 
+@media screen and (max-width: 768px) {
+  .seccion7 input,
+.seccion7 textarea {
+  width: 300px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+  
+  
+  
+  
+}
+
 .seccion7 input:focus,
 .seccion7 textarea:focus {
   border-color: #007bff;
@@ -1612,6 +1754,14 @@ right: 0vw;
     margin-top: 5rem; /* Espacio superior entre el formulario y los botones */
 }
 
+  @media (max-width: 720px) {  
+/* Estilos para el contenedor de botones */
+.seccion7 .button-container {
+  position:relative;
+    display: block;
+right: 0vw;
+    margin-top: 5rem; /* Espacio superior entre el formulario y los botones */
+}}
 
 
 .negative:hover {
@@ -1632,6 +1782,8 @@ right: 0vw;
     border-radius: 4px; /* Bordes redondeados */
     font-weight: bold;
 }
+
+
 
 .seccion7 button[type="submit"]:hover {
     background-color: darkred; /* Cambio de color al pasar el mouse */
