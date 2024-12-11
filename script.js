@@ -541,7 +541,7 @@ document.addEventListener('DOMContentLoaded', () => {
   buttons.forEach((buttonData, i) => {
     // Configurar valores dinámicos de posición
     const offsetX = isMobile ? (i % 2 === 0 ? -45 : 30) : (i % 2 === 0 ? -35 : 30);
-    const offsetY = isMobile ? (i < 2 ? 20 : 65) : (i < 2 ? -5 : 25);
+    const offsetY = isMobile ? (i < 2 ? 15 : 65) : (i < 2 ? -5 : 25);
 
     // Crear el botón con las posiciones ajustadas
     const button = createButton(buttonData.image, buttonData.link, buttonData.text, textColor, buttonData.id2);
@@ -628,7 +628,7 @@ function createButton(image, link, text, textColor, id2) {
     button.style.display = 'flex';
     button.style.flexDirection = 'column';
     button.style.alignItems = 'center';
-    button.style.justifyContent = 'center';
+
 
     // Imagen dentro del botón
     const img = document.createElement('img');
