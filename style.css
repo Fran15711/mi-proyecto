@@ -183,6 +183,8 @@ height:50vh;
     margin-top: 6vh; /* Espaciado superior ajustado */
 }
 @media screen and (max-width: 768px) {
+  .seccion1-2 {    min-height: 35vh; /* Altura fija */}
+  
 .seccion1-2 .button-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual ancho */
@@ -226,7 +228,7 @@ height:50vh;
 /* Media query para pantallas pequeñas */
 @media (max-width: 720px) {
     .seccion1-2 {
-        height: 20vh; /* Altura ajustada para pantallas pequeñas */
+        height: auto; /* Altura ajustada para pantallas pequeñas */
         padding: 2vh 3vw; /* Reducir espaciado interno */
     }
 
@@ -262,7 +264,7 @@ height:50vh;
 
 @media (max-width: 720px) {
     .seccion1-3 {
-        height: 17vh; /* Ajuste para pantallas pequeñas */
+        height: auto; /* Ajuste para pantallas pequeñas */
     }
 }
 
@@ -407,7 +409,7 @@ height:50vh;
 }
 @media (max-width: 720px) {
     .seccion2-2 {
-        height: 10vh;
+        height: auto;
     }
 }
 
@@ -433,7 +435,7 @@ height:50vh;
 
 @media (max-width: 720px) {
     .seccion2-3 {
-        height: 60vh;
+        height: auto;
     }
   
   
@@ -1586,7 +1588,7 @@ overflow:hidden;
   justify-content: center;
   align-items: center;
 overflow:hidden;
-  height:90vh;
+  height:100vh;
   margin: 0 auto;
   text-align: center;
     font-family: 'Poppins', sans-serif;
