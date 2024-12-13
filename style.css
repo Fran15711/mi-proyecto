@@ -189,7 +189,7 @@ height:50vh;
     margin-top: 6vh; /* Espaciado superior ajustado */
 }
 @media screen and (max-width: 768px) {
-  .seccion1-2 {    min-height: 35vh; /* Altura fija */}
+  .seccion1-2 {    min-height: auto; /* Altura fija */}
   
 .seccion1-2 .button-container {
     display: grid;
@@ -198,6 +198,7 @@ height:50vh;
     justify-content: center; /* Centra el contenido horizontalmente */
     align-items: center; /* Centra el contenido verticalmente */
     margin-top: 2vh;
+  margin-bottom:1vh;
 }}
 
 
