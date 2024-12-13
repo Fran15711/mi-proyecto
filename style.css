@@ -1616,7 +1616,7 @@ overflow:hidden;
   font-weight: bold; /* Usamos Poppins en bold */
   font-size: 2.5rem;
   margin-bottom: 10px;
-  top:16vh;
+  top:7vh;
   position:relative;
 }
 }
@@ -1632,7 +1632,7 @@ overflow:hidden;
 .seccion7 p {
   margin-bottom: 20px;
   position:relative;
-  top:16vh;
+  top:13vh;
   font-size:1rem;
   font-weight: normal; /* Poppins normal para el párrafo */
   padding:2px;
@@ -1736,7 +1736,7 @@ overflow:hidden;
       @media (max-width: 720px) {
 /* Estilos del formulario */
 .seccion7 .contact-form {
-  margin-top: 16vh;
+  margin-top: 25vh;
   position: absolute;
 }}
 
@@ -1801,7 +1801,7 @@ right: 0vw;
   position:relative;
     display: block;
 right: 0vw;
-    margin-top: 5rem; /* Espacio superior entre el formulario y los botones */
+
 }}
 
 
@@ -1825,11 +1825,6 @@ right: 0vw;
 }
 
 
-
-.seccion7 button[type="submit"]:hover {
-    background-color: darkred; /* Cambio de color al pasar el mouse */
-    transform: scale(1.5); /* Efecto de aumento al hacer hover */
-}
 
 .seccion7 button[type="submit"]:hover {
     background-color: darkred; /* Cambio de color al pasar el mouse */
