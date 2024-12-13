@@ -458,6 +458,7 @@ height:50vh;
     align-items: center; /* Centra los botones verticalmente */
     gap: 1rem; /* Espacio entre los botones */
     margin-top: 2rem; /* Margen superior para separación del título */
+
 }
 
 @media (max-width: 720px) {
@@ -478,6 +479,7 @@ height:50vh;
     justify-items: center; /* Centra los botones verticalmente */
     gap: 1rem; /* Espacio entre los botones */
     margin-top: 2rem; /* Margen superior para separación del título */
+      margin-bottom:2rem;
 }
   
 }
@@ -792,7 +794,7 @@ font-size:3rem;
 
 @media (max-width: 650px) {
   .seccion2 .content .title {
-    font-size: 1.2rem;
+    font-size: 4vmin;
   }
   .seccion2 .content .description {
     font-size: 0.75rem;
@@ -1141,7 +1143,7 @@ width:72vw
 }
 
 .seccion4 h1 {
-  font-size: 5vmin; /* Tamaño de fuente relativo al ancho de la pantalla */
+  font-size: 6vmin; /* Tamaño de fuente relativo al ancho de la pantalla */
   margin-bottom: 2vh; /* Espacio inferior relativo a la altura de la pantalla */
 }
 
@@ -1157,7 +1159,7 @@ width:72vw
 
 .seccion4 p {
   line-height: 1.6; /* Altura de línea */
-  font-size: 2.5vmin; /* Tamaño de fuente relativo para el párrafo */
+  font-size: 3.5vmin; /* Tamaño de fuente relativo para el párrafo */
   color: #FFF; /* Color del texto */
 }
 
@@ -1535,7 +1537,7 @@ width:72vw
 
   @media (max-width: 720px) {  
 .seccion6 .count-text {
-  font-size: 2.7vw; /* Tamaño de fuente ajustado al ancho de la pantalla */
+  font-size: 3.1vw; /* Tamaño de fuente ajustado al ancho de la pantalla */
   font-weight: normal;
   margin-top: 1vh;
   margin-bottom: 0;
@@ -1561,7 +1563,7 @@ width:72vw
 }
 @media screen and (max-width: 768px) {
 .seccion6 h3 {
-  font-size:4vw
+  font-size:5vw
 }}
 
 /* Estilos de la sección */
@@ -1823,6 +1825,11 @@ right: 0vw;
 }
 
 
+
+.seccion7 button[type="submit"]:hover {
+    background-color: darkred; /* Cambio de color al pasar el mouse */
+    transform: scale(1.5); /* Efecto de aumento al hacer hover */
+}
 
 .seccion7 button[type="submit"]:hover {
     background-color: darkred; /* Cambio de color al pasar el mouse */
