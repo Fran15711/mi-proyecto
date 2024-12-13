@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
     move();
 });
 
-//SECCION
+//SECCION2
 document.addEventListener("DOMContentLoaded", () => {
     // Crear modal dinámicamente
     const modal = document.createElement("div");
@@ -819,6 +819,8 @@ const tag = document.createElement('script');
 tag.src = "//www.youtube.com/player_api";
 document.body.appendChild(tag);
 
+
+
 // Sección 6
 $(document).ready(() => {
   $('.count-number').each(function () {
@@ -892,7 +894,9 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('Formulario no encontrado.');
   }
 
-  // Observer de intersección para sección 7
+  
+  
+  // Observer de intersección para SECCION 7
   const section = document.querySelector('.seccion7');
   if (section) {
     const observer = new IntersectionObserver(entries => {
